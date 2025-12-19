@@ -15,15 +15,12 @@
     --gray-999-basis: 0, 0%, 100%;
     --gray-999_40: hsla(var(--gray-999-basis), 0.4);
     
-    /* UPDATED: Slightly warmer/creamy white to match image background */
     --gray-999: #f9f9f7; 
 
-    /* UPDATED: Green Palette from Image */
     --accent-light: #4a7a58;    /* Muted Sage */
     --accent-regular: #1e4628;  /* Deep Forest Green (Main Brand Color) */
     --accent-dark: #0f2415;     /* Very Dark Green */
     
-    /* Updated HSLA to match Green Hue (approx 135deg) */
     --accent-overlay: hsla(135, 40%, 20%, 0.33);
     --accent-subtle-overlay: var(--accent-overlay);
     --accent-text-over: var(--gray-999);
@@ -41,7 +38,6 @@
         var(--gradient-stop-2),
         var(--gradient-stop-3)
     );
-    /* Adjusted orange gradient to be more earthy to match the green */
     --gradient-accent-orange: linear-gradient(
         150deg,
         #ca9c78,
@@ -98,7 +94,6 @@
     --gray-999-basis: 225, 31%, 5%;
     --gray-999: #090b11;
 
-    /* UPDATED: Dark Mode Greens (Inverted for readability on dark bg) */
     --accent-light: #0f2415;   /* Dark background green */
     --accent-regular: #8ab096; /* Lighter Sage Green for text/links */
     --accent-dark: #4a7a58;    /* Muted green */

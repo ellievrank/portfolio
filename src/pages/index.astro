@@ -21,29 +21,25 @@ const aboutCards = [
 
 const projects = [
   {
-    title: "Logo Design",
+    title: "Open Justice - Coming Soon",
     img: "https://framerusercontent.com/images/XodgsX9fUzFedjsfP2rj9P91j0.png",
   },
   {
-    title: "Monogram",
+    title: "CIC Handbook - Coming Soon",
     img: "https://framerusercontent.com/images/SLVpuoBrmRsU7vMvW8MtwO6ETaU.png",
   },
   {
-    title: "Branding",
+    title: "Tactify - Coming Soon",
     img: "https://framerusercontent.com/images/D3JJyJhS5fmlvYWobXrYd727u60.png",
-  },
-  {
-    title: "Experimental",
-    img: "https://framerusercontent.com/images/OCcqHnz818Yn1x42EVWFW03xJ0A.png",
-  },
+  }
 ];
 
 const experience = [
   {
     role: "Information Consultant",
-    company: "SuperCo",
-    date: "2019 — Present",
-    desc: "Provide information and referral to members of the public across a wide range of matters via in person and phone advice line. Responsibilities include triaging enquiries, booking legal appointments, and managing reception duties.",
+    company: "Citizens Advice Bureau",
+    date: "2025 — Present",
+    desc: "Provide information and referral to members of the public across a wide range of matters via in person and phone advice line. Responsibilities include triaging enquiries, booking legal appointments, and managing reception duties. Currently undergoing training for assisting individuals with the Criminal Injuries Compensation process.",
   },
   {
     role: "Social Media Manager",
@@ -58,13 +54,13 @@ const education = [
     role: "Bachelor of Law & Commerce",
     company: "Curtin University",
     date: "2025 - 2029",
-    desc: "Specialized in user research, interaction design, user interface, digital and graphic design alongside legal studies.",
+    desc: "Building a foundation in law and commerce with a focus on access to justice, legal literacy, and community-facing legal support.",
   },
   {
     role: "High School Diploma",
     company: "Santa Maria College",
     date: "2020 - 2024",
-    desc: "Gained a solid foundation in software development overall. Focused on building mobile applications.",
+    desc: "Developed strong written communication, critical thinking, and ethical reasoning skills in preparation for tertiary legal studies.",
   },
 ];
 ---
@@ -73,14 +69,14 @@ const education = [
   <Navbar />
 
   <section id="home" class="container hero">
-    <div class="hero-top-text">Crafting Digital Goods Since — Y:2017</div>
+    <div class="hero-top-text">Pursuing Passions</div>
 
     <div class="hero-sandwich">
       <h1 class="sandwich-text top">ELLIE</h1>
 
       <div class="sandwich-image-wrapper">
         <img
-          src="/portrait.jpg"
+          src="/assets/portrait.jpg"  alt="Ellie Vrankovich"
           alt="Ellie Vrankovich"
         />
       </div>
@@ -138,13 +134,6 @@ const education = [
       }
     </div>
   </section>
-
-  <div class="marquee-wrapper">
-    <div class="marquee-static">
-      LEGAL RESEARCH — CLIENT COMMUNICATION — ACCESS TO JUSTICE — INFORMATION
-      TRIAGE
-    </div>
-  </div>
 
   <section id="experience" class="container section-padding">
     <div class="section-header">
@@ -226,7 +215,7 @@ const education = [
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Ellie Vrankovich. All rights reserved.</p>
+      <p>&copy; Designed and Built by Ellie Vrankovich 2025. All rights reserved.</p>
     </div>
   </footer>
 </Layout>
@@ -248,6 +237,7 @@ const education = [
     font-size: 12px;
     letter-spacing: 1px;
     color: #666;
+    margin-top: 100px; 
     margin-bottom: 20px;
     text-transform: uppercase;
   }
@@ -265,7 +255,7 @@ const education = [
     font-size: clamp(60px, 10vw, 180px);
     font-weight: 800;
     line-height: 0.8;
-    color: #1a3b28; /* Dark Green */
+    color: #1a3b28;
     text-transform: uppercase;
     margin: 0;
     letter-spacing: -0.04em;
@@ -321,7 +311,7 @@ const education = [
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1a3b28; /* Dark Green */
+    color: #1a3b28; 
     margin: 0;
     white-space: nowrap;
   }
@@ -335,7 +325,7 @@ const education = [
   .header-square {
     width: 32px;
     height: 4px;
-    background-color: #1a3b28; /* Dark Green */
+    background-color: #1a3b28; 
   }
 
   .section-intro {

@@ -31,7 +31,7 @@ const projects = [
   {
     title: "Tactify - Coming Soon",
     img: "https://framerusercontent.com/images/D3JJyJhS5fmlvYWobXrYd727u60.png",
-  }
+  },
 ];
 
 const experience = [
@@ -76,7 +76,8 @@ const education = [
 
       <div class="sandwich-image-wrapper">
         <img
-          src="/assets/portrait.jpg"  alt="Ellie Vrankovich"
+          src="/assets/portrait.jpg"
+          alt="Ellie Vrankovich"
           alt="Ellie Vrankovich"
         />
       </div>
@@ -85,7 +86,8 @@ const education = [
     </div>
 
     <p class="hero-desc">
-      A Law and Commerce student committed to improving access to justice through clear communication, community support, and practical solutions.
+      A Law and Commerce student committed to improving access to justice
+      through clear communication, community support, and practical solutions.
     </p>
   </section>
 
@@ -215,7 +217,9 @@ const education = [
 
   <footer>
     <div class="container">
-      <p>&copy; Designed and Built by Ellie Vrankovich 2025. All rights reserved.</p>
+      <p>
+        &copy; Designed and Built by Ellie Vrankovich 2025. All rights reserved.
+      </p>
     </div>
   </footer>
 </Layout>
@@ -228,8 +232,8 @@ const education = [
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 140px; 
-    padding-top: 100px; 
+    margin-top: 140px;
+    padding-top: 100px;
     padding-bottom: 150px;
   }
 
@@ -237,7 +241,7 @@ const education = [
     font-size: 12px;
     letter-spacing: 1px;
     color: #666;
-    margin-top: 100px; 
+    margin-top: 100px;
     margin-bottom: 20px;
     text-transform: uppercase;
   }
@@ -311,7 +315,7 @@ const education = [
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1a3b28; 
+    color: #1a3b28;
     margin: 0;
     white-space: nowrap;
   }
@@ -325,7 +329,7 @@ const education = [
   .header-square {
     width: 32px;
     height: 4px;
-    background-color: #1a3b28; 
+    background-color: #1a3b28;
   }
 
   .section-intro {
@@ -524,7 +528,7 @@ const education = [
     color: #666;
   }
 
-  /* Responsive */
+  /* Responsive - Phone Styles */
   @media (max-width: 768px) {
     .hero-main,
     .project-grid,
@@ -533,19 +537,43 @@ const education = [
       grid-template-columns: 1fr;
     }
 
+    .sandwich-text {
+      font-size: clamp(40px, 15vw, 80px);
+      line-height: 0.85;
+    }
+
+    .hero {
+      margin-top: 100px;
+      padding-top: 70px;
+      padding-bottom: 80px;
+    }
+
+    .hero-top-text {
+      margin-top: 40px;
+    }
+
+    .section-padding {
+      padding-top: 60px;
+      padding-bottom: 60px; /* Was 120px */
+    }
+
     .sandwich-image-wrapper {
-      width: 200px;
-      height: 280px;
-      margin-top: -40px;
-      margin-bottom: -40px;
+      width: 160px;
+      height: 240px;
+      margin-top: -30px;
+      margin-bottom: -30px;
+      border-radius: 80px;
     }
 
     .section-header {
       flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
     }
 
     .section-intro {
       font-size: 20px;
+      margin-bottom: 40px;
     }
   }
 </style>

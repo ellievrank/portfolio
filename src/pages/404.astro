@@ -1,8 +1,76 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
-</BaseLayout>
+<Layout title="404 - Page Not Found">
+  <Navbar />
+
+  <section class="container error-container">
+    <div class="error-content">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Page Not Found</h2>
+      <p class="error-desc">
+        Oops! The page you are looking for doesn't exist or has been moved.
+      </p>
+      <a href="/" class="back-button">Go Back Home</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .error-container {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  .error-code {
+    font-size: clamp(80px, 15vw, 150px);
+    font-weight: 800;
+    color: #1a3b28;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .error-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #111;
+  }
+
+  .error-desc {
+    font-size: 18px;
+    color: #666;
+    max-width: 400px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  .back-button {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #111;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+  }
+
+  .back-button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+  }
+</style>

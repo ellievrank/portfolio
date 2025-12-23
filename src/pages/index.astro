@@ -282,6 +282,7 @@ const education = [
         margin-top: -70px;
         margin-bottom: -70px;
         pointer-events: none;
+        will-change: transform;
       }
 
       .sandwich-image-wrapper img {
@@ -351,8 +352,8 @@ const education = [
       }
 
       .section-padding {
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-top: 100px;
+        padding-bottom: 100px;
       }
 
       /* About Grid */
@@ -572,6 +573,24 @@ const education = [
         }
       }
     </style>
+    <script>
+      // Select the image wrapper
+      const image = document.querySelector(
+        ".sandwich-image-wrapper"
+      ) as HTMLElement;
+
+      if (image) {
+        const startOffset = 50;
+        const speed = 0.4;
+        const updateParallax = () => {
+          const scrolled = window.scrollY;
+          const val = startOffset - scrolled * speed;
+          image.style.transform = `translateY(${val}px)`;
+        };
+        updateParallax();
+        window.addEventListener("scroll", updateParallax);
+      }
+    </script>
     <Footer />
   </section>
 </Layout>

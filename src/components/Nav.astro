@@ -13,21 +13,27 @@ const links = [
   <div class="container nav-inner">
     <div class="logo">Ellie Vrankovich</div>
     <ul class="nav-links">
-      {links.map((link) => (
-        <li><a href={link.href}>{link.name}</a></li>
-      ))}
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.href}>{link.name}</a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </nav>
 
 <style>
   nav {
-    position: relative;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
+
     background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
+
     z-index: 1000;
     border-bottom: 1px solid #e5e5e5;
   }
@@ -72,7 +78,6 @@ const links = [
     color: #111;
   }
 
-  /* Hide links on small mobile screens */
   @media (max-width: 768px) {
     .nav-links {
       display: none;

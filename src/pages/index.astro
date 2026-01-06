@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import Navbar from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
+import Navbar from "../components/layout/Nav.astro";
+import Footer from "../components/layout/Footer.astro";
+import Story from "../components/Story.astro";
 
 const aboutCards = [
   {
@@ -107,6 +108,8 @@ const education = [
       better understand their rights.
     </div>
 
+    <Story />
+
     <div class="about-cards">
       {
         aboutCards.map((card) => (
@@ -208,7 +211,7 @@ const education = [
       <div class="contact-info">
         <p>
           If you’d like to collaborate, discuss research, or talk about
-          access-to-justice initiatives, feel free to get in touch.
+          initiatives, feel free to get in touch.
         </p>
         <div class="contact-links">
           <br />

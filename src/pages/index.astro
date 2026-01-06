@@ -1,115 +1,29 @@
 ---
+// 1. Imports
 import Layout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/layout/Nav.astro";
 import Footer from "../components/layout/Footer.astro";
+import HomeHero from "../components/HomeHero.astro";
 import Story from "../components/Story.astro";
+import SectionHeader from "../components/layout/SectionHeader.astro";
+import ExperienceItem from "../components/ExperienceItem.astro";
+import Contact from "../components/Contact.astro";
 
-const aboutCards = [
-  {
-    title: "Research & Legal Analysis",
-    desc: "Legal research, issue identification, and clear synthesis of complex information.",
-  },
-  {
-    title: "Policy & Systems Thinking",
-    desc: "Understanding how legal, social, and economic systems affect access and outcomes.",
-  },
-  {
-    title: "Communication & Writing",
-    desc: "Clear, accessible writing for diverse audiences and complex systems.",
-  },
-];
-
-const projects = [
-  {
-    title: "Seek Legal - Coming Soon",
-    img: "/assets/seek-site.png",
-    href: "https://seeklegal.org/",
-    desc: "An Australian initiative dedicated to improving access to justice through community-centred resources.",
-  },
-  {
-    title: "CIC Handbook",
-    img: "/assets/cic-site.png",
-    href: "https://cichandbook.com/",
-    desc: "A plain-language resource that helps victims of crime understand criminal injuries compensation.",
-  },
-  {
-    title: "Tactify - Coming Soon",
-    img: "https://framerusercontent.com/images/D3JJyJhS5fmlvYWobXrYd727u60.png",
-  },
-];
-
-const experience = [
-  {
-    role: "Information Consultant",
-    company: "Citizens Advice Bureau",
-    date: "2025 — Present",
-    desc: "Provide information and referral to members of the public across a wide range of matters via in person and phone advice line. Responsibilities include triaging enquiries, booking legal appointments, and managing reception duties. Currently undergoing training for assisting individuals with the Criminal Injuries Compensation process.",
-  },
-  {
-    role: "Social Media Manager",
-    company: "Lightbulb Skills",
-    date: "2023 — Present",
-    desc: "Manage and curate digital content for Lightbulb Skills, an organisation supporting individuals with disability. My role focuses on clear, accessible communication that promotes inclusion, community engagement, and awareness.",
-  },
-];
-
-const education = [
-  {
-    role: "Bachelor of Law & Commerce",
-    company: "Curtin University",
-    date: "2025 - 2029",
-    desc: "Building a foundation in law and commerce with a focus on access to justice, legal literacy, and community-facing legal support.",
-  },
-  {
-    role: "High School Diploma",
-    company: "Santa Maria College",
-    date: "2020 - 2024",
-    desc: "Developed strong written communication, critical thinking, and ethical reasoning skills in preparation for tertiary legal studies.",
-  },
-];
+import { aboutCards, projects, experience, education } from "../data";
 ---
 
 <Layout title="Ellie Vrankovich - Personal Site">
   <Navbar />
-
-  <section id="home" class="container hero">
-    <div class="hero-top-text">Pursuing Passions</div>
-
-    <div class="hero-sandwich">
-      <h1 class="sandwich-text top">ELLIE</h1>
-
-      <div class="sandwich-image-wrapper">
-        <img
-          src="/assets/portrait.jpg"
-          alt="Ellie Vrankovich"
-          alt="Ellie Vrankovich"
-        />
-      </div>
-
-      <h1 class="sandwich-text bottom">VRANKOVICH</h1>
-    </div>
-
-    <p class="hero-desc">
-      A Law and Commerce student committed to improving access to justice
-      through clear communication, community support, and practical solutions.
-    </p>
-  </section>
+  <HomeHero />
 
   <section id="about" class="container section-padding">
-    <div class="section-header">
-      <h2 class="section-title">About</h2>
-      <div class="header-line"></div>
-      <div class="header-square"></div>
-    </div>
-
+    <SectionHeader title="About" />
     <div class="section-intro">
       My work sits at the intersection of law, technology, and accessibility.
       I’m passionate about creating clear, practical resources that help people
       better understand their rights.
     </div>
-
     <Story />
-
     <div class="about-cards">
       {
         aboutCards.map((card) => (
@@ -123,30 +37,19 @@ const education = [
   </section>
 
   <section id="projects" class="container section-padding">
-    <div class="section-header">
-      <h2 class="section-title">Projects</h2>
-      <div class="header-line"></div>
-      <div class="header-square"></div>
-    </div>
-
+    <SectionHeader title="Projects" />
     <div class="project-grid">
       {
         projects.map((project) => (
           <a
             href={project.href || "#"}
             class="project-item"
-            target={
-              project.href && project.href.startsWith("http")
-                ? "_blank"
-                : "_self"
-            }
-            rel="noopener noreferrer"
+            target={project.href?.startsWith("http") ? "_blank" : "_self"}
           >
             <div class="project-img">
               <img src={project.img} alt={project.title} />
             </div>
             <div class="project-title">{project.title}</div>
-
             {project.desc && <p class="project-desc">{project.desc}</p>}
           </a>
         ))
@@ -155,203 +58,37 @@ const education = [
   </section>
 
   <section id="experience" class="container section-padding">
-    <div class="section-header">
-      <h2 class="section-title">Experience</h2>
-      <div class="header-line"></div>
-      <div class="header-square"></div>
-    </div>
-
+    <SectionHeader title="Experience" />
     <div class="experience-list">
-      {
-        experience.map((item) => (
-          <div class="experience-item">
-            <div>
-              <div class="role-title">{item.role}</div>
-              <div class="company-name">{item.company}</div>
-              <span class="role-dates">{item.date}</span>
-            </div>
-            <div class="role-desc">{item.desc}</div>
-          </div>
-        ))
-      }
+      {experience.map((item) => <ExperienceItem {...item} />)}
     </div>
   </section>
 
   <section id="education" class="container section-padding">
-    <div class="section-header">
-      <h2 class="section-title">Education</h2>
-      <div class="header-line"></div>
-      <div class="header-square"></div>
-    </div>
-
+    <SectionHeader title="Education" />
     <div class="experience-list">
-      {
-        education.map((item) => (
-          <div class="experience-item">
-            <div>
-              <div class="role-title">{item.role}</div>
-              <div class="company-name">{item.company}</div>
-              <span class="role-dates">{item.date}</span>
-            </div>
-            <div class="role-desc">{item.desc}</div>
-          </div>
-        ))
-      }
+      {education.map((item) => <ExperienceItem {...item} />)}
     </div>
   </section>
 
   <section id="contact" class="container section-padding">
-    <div class="section-header">
-      <h2 class="section-title">Contact</h2>
-      <div class="header-line"></div>
-      <div class="header-square"></div>
-    </div>
-
-    <div class="contact-layout">
-      <div class="contact-info">
-        <p>
-          If you’d like to collaborate, discuss research, or talk about
-          initiatives, feel free to get in touch.
-        </p>
-        <div class="contact-links">
-          <br />
-          <strong>Perth, Western Australia</strong><br /><br />
-          <a href="mailto:ellievrank@gmail.com">ellievrank@gmail.com</a>
-          <a href="#">www.ellievrankovich.com</a>
-        </div>
-      </div>
-
-      <form
-        class="contact-form"
-        action="https://formsubmit.co/ellie@ellievrankovich.com"
-        method="POST"
-      >
-        <input type="hidden" name="_captcha" value="false" />
-        <input
-          type="hidden"
-          name="_next"
-          value="https://ellievrankovich.com/success"
-        />
-
-        <input type="text" name="name" placeholder="Name" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea rows="5" name="message" placeholder="Message" required
-        ></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+    <SectionHeader title="Contact" />
+    <Contact />
   </section>
 
   <Footer />
 </Layout>
+
 <style>
-  .hero {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 140px;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .section-padding {
     padding-top: 100px;
-    padding-bottom: 180px;
+    padding-bottom: 100px;
   }
-
-  .hero-top-text {
-    font-size: 12px;
-    letter-spacing: 1px;
-    color: #666;
-    margin-top: 70px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
-
-  .hero-sandwich {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  .sandwich-text {
-    font-size: clamp(60px, 10vw, 180px);
-    font-weight: 800;
-    line-height: 0.8;
-    color: #1a3b28;
-    text-transform: uppercase;
-    margin: 0;
-    letter-spacing: -0.04em;
-  }
-
-  .sandwich-text.top {
-    z-index: 1;
-    position: relative;
-  }
-
-  .sandwich-image-wrapper {
-    z-index: 2;
-    position: relative;
-    width: 280px;
-    height: 380px;
-    border-radius: 120px;
-    overflow: hidden;
-    margin-top: -70px;
-    margin-bottom: -70px;
-    pointer-events: none;
-    will-change: transform;
-  }
-
-  .sandwich-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .sandwich-text.bottom {
-    z-index: 3;
-    position: relative;
-  }
-
-  .hero-desc {
-    margin-top: 60px;
-    font-size: 18px;
-    color: #666;
-    max-width: 500px;
-    line-height: 1.6;
-  }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-    width: 100%;
-  }
-
-  .section-title {
-    font-size: 24px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #1a3b28;
-    margin: 0;
-    white-space: nowrap;
-  }
-
-  .header-line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #d1d1d1;
-  }
-
-  .header-square {
-    width: 32px;
-    height: 4px;
-    background-color: #1a3b28;
-  }
-
   .section-intro {
     font-size: 28px;
     font-weight: 500;
@@ -361,36 +98,22 @@ const education = [
     color: #111;
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  .section-padding {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-
   .about-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
   }
-
   .card {
     background: #f9f9f9;
     padding: 32px;
     border-radius: 12px;
     border: 1px solid #e5e5e5;
   }
-
   .card h3 {
     font-size: 18px;
     margin-bottom: 12px;
     font-weight: 600;
   }
-
   .card p {
     font-size: 15px;
     color: #666;
@@ -401,13 +124,11 @@ const education = [
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
   }
-
   .project-item {
     display: block;
     text-decoration: none;
     color: inherit;
   }
-
   .project-img {
     background-color: #eee;
     aspect-ratio: 4/3;
@@ -415,23 +136,19 @@ const education = [
     margin-bottom: 16px;
     overflow: hidden;
   }
-
   .project-img img {
     width: 100%;
     height: 100%;
     transition: transform 0.3s ease;
     object-fit: cover;
   }
-
   .project-item:hover .project-img img {
     transform: scale(1.03);
   }
-
   .project-title {
     font-size: 16px;
     font-weight: 600;
   }
-
   .project-desc {
     font-size: 15px;
     color: #666;
@@ -439,184 +156,17 @@ const education = [
     line-height: 1.5;
   }
 
-  .marquee-wrapper {
-    overflow: hidden;
-    background: #fff;
-  }
-
-  .marquee-static {
-    font-size: 80px;
-    font-weight: 800;
-    white-space: nowrap;
-    color: #f0f0f0;
-    text-transform: uppercase;
-    line-height: 1;
-    padding: 40px 0;
-    user-select: none;
-    -webkit-text-stroke: 1px #ddd;
-  }
-
-  .experience-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .experience-item {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 40px 0;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .role-title {
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .company-name {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 8px;
-  }
-
-  .role-dates {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 16px;
-    display: block;
-  }
-
-  .role-desc {
-    font-size: 16px;
-    color: #111;
-    line-height: 1.6;
-  }
-
-  /* Contact */
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-
-  .contact-info p {
-    font-size: 24px;
-    margin-bottom: 24px;
-    line-height: 1.4;
-  }
-
-  .contact-links a {
-    display: block;
-    font-size: 18px;
-    text-decoration: underline;
-    margin-bottom: 8px;
-    color: inherit;
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 16px;
-    background: #f9f9f9;
-  }
-
-  button {
-    padding: 16px 32px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    align-self: flex-start;
-  }
-
   @media (max-width: 768px) {
-    .hero-main,
-    .project-grid,
-    .contact-layout,
-    .experience-item {
+    .project-grid {
       grid-template-columns: 1fr;
     }
-
-    .sandwich-text {
-      font-size: clamp(32px, 12vw, 60px);
-      line-height: 0.85;
-    }
-
-    .hero {
-      margin-top: 20px;
-      padding-top: 10px;
-      padding-bottom: 60px;
-    }
-
-    .hero-top-text {
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
     .section-padding {
       padding-top: 50px;
       padding-bottom: 50px;
     }
-
-    .sandwich-image-wrapper {
-      width: 140px;
-      height: 200px;
-      margin-top: -20px;
-      margin-bottom: -20px;
-      border-radius: 70px;
-    }
-
-    .section-header {
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
     .section-intro {
       font-size: 18px;
       margin-bottom: 30px;
     }
   }
 </style>
-
-<script>
-  const image = document.querySelector(
-    ".sandwich-image-wrapper"
-  ) as HTMLElement;
-
-  if (image) {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
-    const startOffset = isMobile ? 20 : 60;
-    const speed = 0.4;
-
-    const updateParallax = () => {
-      const scrolled = window.scrollY;
-      const val = startOffset - scrolled * speed;
-      image.style.transform = `translateY(${val}px)`;
-    };
-
-    updateParallax();
-    window.addEventListener("scroll", updateParallax);
-
-    window.addEventListener("resize", () => {
-      const newIsMobile = window.matchMedia("(max-width: 768px)").matches;
-      const newOffset = newIsMobile ? 20 : 60;
-      const scrolled = window.scrollY;
-      const val = newOffset - scrolled * speed;
-      image.style.transform = `translateY(${val}px)`;
-    });
-  }
-</script>

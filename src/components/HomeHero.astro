@@ -1,0 +1,140 @@
+---
+/* src/components/HomeHero.astro */
+---
+
+<section id="home" class="container hero">
+  <div class="hero-top-text">Pursuing Passions</div>
+  <div class="hero-sandwich">
+    <h1 class="sandwich-text top">ELLIE</h1>
+    <div class="sandwich-image-wrapper">
+      <img src="/assets/portrait.jpg" alt="Ellie Vrankovich" />
+    </div>
+    <h1 class="sandwich-text bottom">VRANKOVICH</h1>
+  </div>
+  <p class="hero-desc">
+    A Law and Commerce student committed to improving access to justice through
+    clear communication, community support, and practical solutions.
+  </p>
+</section>
+
+<style>
+  .hero {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 100px;
+  }
+  .hero-top-text {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero-sandwich {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .sandwich-text {
+    font-size: clamp(60px, 10vw, 180px);
+    font-weight: 800;
+    line-height: 0.8;
+    color: #1a3b28;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: -0.04em;
+  }
+  .sandwich-text.top {
+    z-index: 1;
+    position: relative;
+  }
+  .sandwich-image-wrapper {
+    z-index: 2;
+    position: relative;
+    width: 280px;
+    height: 380px;
+    border-radius: 120px;
+    overflow: hidden;
+    margin-top: -70px;
+    margin-bottom: -70px;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .sandwich-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sandwich-text.bottom {
+    z-index: 3;
+    position: relative;
+  }
+  .hero-desc {
+    margin-top: 60px;
+    font-size: 18px;
+    color: #666;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .sandwich-text {
+      font-size: clamp(32px, 12vw, 60px);
+      line-height: 0.85;
+    }
+    .hero {
+      margin-top: 20px;
+      padding-top: 10px;
+      padding-bottom: 60px;
+    }
+    .hero-top-text {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .sandwich-image-wrapper {
+      width: 140px;
+      height: 200px;
+      margin-top: -20px;
+      margin-bottom: -20px;
+      border-radius: 70px;
+    }
+  }
+</style>
+
+<script>
+  const image = document.querySelector(
+    ".sandwich-image-wrapper"
+  ) as HTMLElement;
+
+  if (image) {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const startOffset = isMobile ? 20 : 60;
+    const speed = 0.4;
+
+    const updateParallax = () => {
+      const scrolled = window.scrollY;
+      const val = startOffset - scrolled * speed;
+      image.style.transform = `translateY(${val}px)`;
+    };
+
+    updateParallax();
+    window.addEventListener("scroll", updateParallax);
+
+    window.addEventListener("resize", () => {
+      const newIsMobile = window.matchMedia("(max-width: 768px)").matches;
+      const newOffset = newIsMobile ? 20 : 60;
+      const scrolled = window.scrollY;
+      const val = newOffset - scrolled * speed;
+      image.style.transform = `translateY(${val}px)`;
+    });
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+const { role, company, date, desc } = Astro.props;
+---
+<div class="experience-item">
+  <div>
+    <div class="role-title">{role}</div>
+    <div class="company-name">{company}</div>
+    <span class="role-dates">{date}</span>
+  </div>
+  <div class="role-desc">{desc}</div>
+</div>
+
+<style>
+  .experience-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 40px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+  .role-title { font-size: 20px; font-weight: 600; }
+  .company-name { font-size: 16px; color: #666; margin-bottom: 8px; }
+  .role-dates { font-size: 14px; color: #666; margin-bottom: 16px; display: block; }
+  .role-desc { font-size: 16px; color: #111; line-height: 1.6; }
+  
+  @media (max-width: 768px) {
+    .experience-item { grid-template-columns: 1fr; }
+  }
+</style>

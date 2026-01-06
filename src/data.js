@@ -36,12 +36,14 @@ export const experience = [
   {
     role: "Information Consultant",
     company: "Citizens Advice Bureau",
+    companyUrl: "https://cabwa.com.au/",
     date: "2025 — Present",
     desc: "Provide information and referral to members of the public across a wide range of matters via in person and phone advice line. Responsibilities include triaging enquiries, booking legal appointments, and managing reception duties. Currently undergoing training for assisting individuals with the Criminal Injuries Compensation process.",
   },
   {
     role: "Social Media Manager",
     company: "Lightbulb Skills",
+    companyUrl: "https://www.lightbulbskills.com.au", 
     date: "2023 — Present",
     desc: "Manage and curate digital content for Lightbulb Skills, an organisation supporting individuals with disability. My role focuses on clear, accessible communication that promotes inclusion, community engagement, and awareness.",
   },

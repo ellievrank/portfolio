@@ -1,17 +1,24 @@
 ---
 const links = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" },
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "About",
+    href: "/#about",
+  },
+  { name: "Projects", href: "/#projects" },
+  { name: "Experience", href: "/#experience" },
+  { name: "Education", href: "/#education" },
+  { name: "Contact", href: "/#contact" },
 ];
 ---
 
 <nav>
   <div class="container nav-inner">
-    <div class="logo">Ellie Vrankovich</div>
+    <a href="/" class="logo">Ellie Vrankovich</a>
+
     <ul class="nav-links">
       {
         links.map((link) => (
@@ -76,6 +83,8 @@ const links = [
     font-weight: 700;
     font-size: 16px;
     color: #111;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {

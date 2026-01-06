@@ -84,4 +84,27 @@ const { title } = Astro.props;
     padding-top: var(--spacing-section);
     padding-bottom: var(--spacing-section);
   }
+
+  ::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #27563b;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #264f38;
+  }
+
+  html {
+    scrollbar-color: #1a3b28 #ffffff;
+    scrollbar-width: thin;
+  }
 </style>

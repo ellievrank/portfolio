@@ -1,7 +1,7 @@
 export const aboutCards = [
   {
     title: "Research & Legal Analysis",
-    desc: "Legal research, issue identification, and clear synthesis of complex information.",
+    desc: "An key interest in legal research, issue identification, and synthesis of complex information.",
   },
   {
     title: "Policy & Systems Thinking",
@@ -47,7 +47,7 @@ export const experience = [
     company: "Lightbulb Skills",
     companyUrl: "https://www.lightbulbskills.com.au", 
     date: "2023 — Present",
-    desc: "Manage and curate digital content for Lightbulb Skills, an organisation supporting individuals with disability. My role focuses on clear, accessible communication that promotes inclusion, community engagement, and awareness.",
+    desc: "Curate digital content and physical learning resources for Lightbulb Skills, an organisation supporting individuals with disability. My role focuses on clear, accessible communication that promotes inclusion and community engagement.",
   },
 ];
 

@@ -55,13 +55,15 @@ export const education = [
   {
     role: "Bachelor of Law & Commerce",
     company: "Curtin University",
+    companyUrl: "https://www.curtin.edu.au/about/learning-teaching/business-and-law/curtin-law-school/", 
     date: "2025 - 2029",
-    desc: "Building a foundation in law and commerce with a focus on access to justice, legal literacy, and community-facing legal support.",
+    desc: "Building a foundation in law and commerce with a focus on access to justice, legal literacy, and community-facing legal support. An active member of the Curtin Student Law Society and Curtin Entreprenuers club.",
   },
   {
     role: "High School Diploma",
     company: "Santa Maria College",
+    companyUrl: "https://santamaria.wa.edu.au", 
     date: "2020 - 2024",
-    desc: "Developed strong written communication, critical thinking, and ethical reasoning skills in preparation for tertiary legal studies.",
+    desc: "Completed high school diploma whilst partaking extracurricular activities, including being part of the Publishing and Media Crew, contributing to the service group 'Making a Difference,' where we sewed clothes for children in Cambodia, supporting the Tech Crew for drama productions, and cheerleading and dance groups.",
   },
 ];

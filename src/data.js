@@ -27,8 +27,10 @@ export const projects = [
     desc: "A plain-language resource that helps victims of crime understand criminal injuries compensation.",
   },
   {
-    title: "Tactify - Coming Soon",
-    img: "https://framerusercontent.com/images/D3JJyJhS5fmlvYWobXrYd727u60.png",
+    title: "Tactify",
+    img: "/assets/tactify.png",
+    href: "https://tactify.org/",
+    desc: "Improving access to education for people who are visually impaired by converting visual learning materials into tactile, audio-guided experiences that make diagrams, worksheets, and concepts accessible through touch and sound.",
   },
 ];
 
@@ -41,7 +43,7 @@ export const experience = [
     desc: "Provide information and referral to members of the public across a wide range of matters via in person and phone advice line. Responsibilities include triaging enquiries, booking legal appointments, and managing reception duties. Currently undergoing training for assisting individuals with the Criminal Injuries Compensation process.",
   },
   {
-    role: "Social Media Manager",
+    role: "Social Media and Marketing",
     company: "Lightbulb Skills",
     companyUrl: "https://www.lightbulbskills.com.au", 
     date: "2023 — Present",
